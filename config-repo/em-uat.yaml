@@ -4,20 +4,6 @@ common:
         port: 3306
         userName: root
         password: root
-    sqlServer:
-        url: 10.20.11.254
-        port: 1433
-        userName: sa
-        password: p@ssw0rd
-        database: DC
-    netsuite:
-        url: odbcserver.na2.netsuite.com
-        port: 1708
-        userName: DataMigration@meorient.com
-        password: "@^*gLGyGCp"
-    jedis:
-        hosts:
-           host_1: 127.0.0.1:6379
     sysConfig: 
         cfgResAndSessionParam: #资源与session参数
             sessionExp: 7200 #session过期时长,单位：分钟
@@ -30,7 +16,7 @@ spring:
     freemarker:
         checkTemplateLocation: false
     application:
-        name: phonecall
+        name: em
     session:
         store-type: none #redis
     devtools:
@@ -65,6 +51,6 @@ masterDB:
             "update*": "PROPAGATION_REQUIRED,-Exception"
             "delete*": "PROPAGATION_REQUIRED,-Exception"
             "*": "readOnly"
-        manageMethod: "execution(* com.meorient.phonecall.*.*.service.*.*(..))"
+        manageMethod: "execution(* com.meorient.em.*.*.service.*.*(..))"
         configLocation: classpath:config/SqlMapConfig.xml
         mapperLocations: classpath*:com/meorient/sqlmap/*.xml

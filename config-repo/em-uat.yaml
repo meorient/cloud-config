@@ -23,7 +23,19 @@ common:
             sessionExp: 7200 #session过期时长,单位：分钟
             resRootUrl: #图片等资源存放站点根目录
             releaseMode: false #是否发布模式
-            authTimeLimit: 5 #签名验证超时时间限制 单位：分钟 
+            authTimeLimit: 5 #签名验证超时时间限制 单位：分钟
+spring:
+    profiles:
+        active: uat
+    freemarker:
+        checkTemplateLocation: false
+    application:
+        name: phonecall
+    session:
+        store-type: none #redis
+    devtools:
+        restart:
+            exclude: static/**
 masterDB:
     dbCfg:
         druidDBCfg:
@@ -56,4 +68,3 @@ masterDB:
         manageMethod: "execution(* com.meorient.phonecall.*.*.service.*.*(..))"
         configLocation: classpath:config/SqlMapConfig.xml
         mapperLocations: classpath*:com/meorient/sqlmap/*.xml
-     

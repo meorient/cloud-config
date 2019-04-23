@@ -1,6 +1,6 @@
 common:
     masterDB:
-        url: 127.0.00.1
+        url: 10.20.0.201
         port: 3306
         userName: root
         password: root
